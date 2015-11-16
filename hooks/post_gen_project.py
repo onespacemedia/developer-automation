@@ -9,18 +9,24 @@ current_path = os.path.abspath('.')
 sys.path.append(current_path)
 
 import github, google, mandrill  # NOQA
+import opbeat  # NOQA
 
 # opbeat, mandrill, google
 
 # Ensure we have all of the environment variables that we need.
 credentials = {
     'github_token': os.getenv('GITHUB_TOKEN') or raw_input('Please enter your Github token (https://github.com/settings/tokens/new, only "repo" is required.): '),
+    'github_username': os.getenv('GITHUB_USERNAME') or raw_input('Please enter your Github username: '),
+    'github_password': os.getenv('GITHUB_PASSWORD') or getpass('Please enter your Github password: '),
 
     'mandrill_email': os.getenv('MANDRILL_EMAIL') or raw_input('Please enter your Mandrill email: '),
     'mandrill_password': os.getenv('MANDRILL_PASSWORD') or getpass('Please enter your Mandrill password: '),
 
     'google_email': os.getenv('GOOGLE_EMAIL') or raw_input('Please enter your Google email: '),
     'google_password': os.getenv('GOOGLE_PASSWORD') or getpass('Please enter your Google password: '),
+
+    'slack_email': os.getenv('SLACK_EMAIL') or raw_input('Please enter your Slack email: '),
+    'slack_password': os.getenv('SLACK_PASSWORD') or getpass('Please enter your Slack password: '),
 }
 
 # Call each of the plugins to get the API keys we need.
@@ -35,6 +41,9 @@ credentials = {
 # )
 
 print google.Plugin().call(credentials)
+credentials.update(
+    opbeat.Plugin().call(credentials)
+)
 
 print credentials
 
