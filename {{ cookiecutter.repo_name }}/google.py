@@ -71,6 +71,12 @@ class Plugin:
             # Go to the credentials screen.
             driver.find_element_by_css_selector(".jfk-button-primary")
             driver.get(driver.current_url.replace('credentials', 'credentials/consent'))
+
+            # Configure the client ID.
+            driver.find_element_by_css_selector('label.p6n-radio > span.p6n-form-label > span').click()
+            driver.find_element_by_xpath("//div[@class='p6n-form-row-input']/input").send_keys("{{ cookiecutter.project_name }}")
+
+            # Enter the Authorized JavaScript origins.
             return {}
 
             """
