@@ -8,7 +8,9 @@ from shutil import rmtree
 current_path = os.path.abspath('.')
 sys.path.append(current_path)
 
-import github, google, mandrill  # NOQA
+import github  # NOQA
+import google  # NOQA
+import mandrill  # NOQA
 import opbeat  # NOQA
 
 # opbeat, mandrill, google
