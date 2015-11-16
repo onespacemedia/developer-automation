@@ -32,17 +32,18 @@ credentials = {
 }
 
 # Call each of the plugins to get the API keys we need.
+credentials.update(
+    github.Plugin().call(credentials)
+)
+
+credentials.update(
+    mandrill.Plugin().call(credentials)
+)
+
 # credentials.update(
-#     github.Plugin().call(credentials)
+#     google.Plugin().call(credentials)
 # )
 
-# opbeat.Plugin.call(credentials)
-
-# credentials.update(
-#     mandrill.Plugin().call(credentials)
-# )
-
-print google.Plugin().call(credentials)
 credentials.update(
     opbeat.Plugin().call(credentials)
 )
