@@ -128,11 +128,13 @@ class Plugin:
             )
             elem.click()
 
+            # .modal-dialog-content > code:nth-child(2)
             elem = WebDriverWait(driver, 45).until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, 'div.p6n-kv-list-item:nth-child(1) > div:nth-child(2) > div:nth-child(1) > span:nth-child(1)'))
             )
             google_plus_client_id = elem.text
 
+            # .modal-dialog-content > div:nth-child(3) > code:nth-child(2)
             elem = WebDriverWait(driver, 45).until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, 'div.p6n-kv-list-item:nth-child(3) > div:nth-child(2) > div:nth-child(1) > span:nth-child(1)'))
             )
