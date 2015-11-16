@@ -12,9 +12,16 @@ class Plugin:
         return code
 
     def call(self, credentials):
-        g = github3.login(
-            token=credentials['github_token']
-        )
+        if credentials['github_token']:
+            g = github3.login(
+                token=credentials['github_token'],
+            )
+        else:
+            g = github3.login(
+                username=credentials['github_username'],
+                password=credentials['github_password'],
+                two_factor_callback=self.two_factor_callback,
+            )
 
         repo = g.organization('onespacemedia').create_repo(**{
             'name': '{{ cookiecutter.github_name }}',

@@ -17,7 +17,7 @@ import opbeat  # NOQA
 
 # Ensure we have all of the environment variables that we need.
 credentials = {
-    'github_token': os.getenv('GITHUB_TOKEN') or raw_input('Please enter your Github token (https://github.com/settings/tokens/new, only "repo" is required.): '),
+    'github_token': os.getenv('GITHUB_TOKEN'),
     'github_username': os.getenv('GITHUB_USERNAME') or raw_input('Please enter your Github username: '),
     'github_password': os.getenv('GITHUB_PASSWORD') or getpass('Please enter your Github password: '),
 
