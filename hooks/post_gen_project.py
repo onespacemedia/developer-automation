@@ -40,9 +40,9 @@ credentials.update(
     mandrill.Plugin().call(credentials)
 )
 
-# credentials.update(
-#     google.Plugin().call(credentials)
-# )
+credentials.update(
+    google.Plugin().call(credentials)
+)
 
 credentials.update(
     opbeat.Plugin().call(credentials)
