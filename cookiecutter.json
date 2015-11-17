@@ -3,5 +3,6 @@
     "domain_name": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}.com",
     "staging_subdomain": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
     "github_name": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
-    "repo_name": "{{ cookiecutter.github_name|replace('-', '_') }}"
+    "base_repo_name": "{{ cookiecutter.github_name|replace('-', '_') }}",
+    "repo_name": ".{{ cookiecutter.base_repo_name }}"
 }

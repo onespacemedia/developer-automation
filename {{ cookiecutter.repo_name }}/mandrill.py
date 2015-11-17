@@ -23,5 +23,5 @@ class Plugin:
         driver.close()
 
         return {
-            'mandrill_password': elem.get_attribute('data-key'),
+            'email_password': elem.get_attribute('data-key'),
         }

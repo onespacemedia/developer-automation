@@ -141,8 +141,8 @@ class Plugin:
             driver.close()
 
             return {
-                'google_client_id': code_elements[0].text,
-                'google_client_secret': code_elements[1].text,
+                'google_plus_key': code_elements[0].text,
+                'google_plus_secret': code_elements[1].text,
             }
 
         except Exception as e:
