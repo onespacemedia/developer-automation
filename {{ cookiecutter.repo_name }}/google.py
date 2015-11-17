@@ -150,4 +150,4 @@ class Plugin:
 
         except Exception as e:
             print e
-            # driver.close()
+            driver.close()
