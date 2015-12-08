@@ -12,3 +12,11 @@ It makes use of the excellent [Cookiecutter](https://github.com/audreyr/cookiecu
 * Opbeat
 
 We have a bunch of Github hooks setup at the organisation level, so we don't need to define those at the repository level.
+
+## Usage
+
+```
+cd ~/Workspace
+pip install cookiecutter
+cookiecutter gh:onespacemedia/developer-automation
+```
