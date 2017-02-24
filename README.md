@@ -1,3 +1,5 @@
+# ABANDONED
+
 # developer-automation
 
 This is a project used by the developers at [Onespacemedia](http://www.onespacemedia.com) to start new [CMS](/onespacemedia/cms/) projects using our [project template](/onespacemedia/project-template) configured and ready to go.
